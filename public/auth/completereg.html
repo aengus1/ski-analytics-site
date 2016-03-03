@@ -1,0 +1,29 @@
+<div class="main-template"  >
+    <div ng-hide="regsuccess || regfail">
+        <br><br>
+        <h3>Complete Registration</h3>
+        <form id="completeregform" ng-init="initForm()">
+            <div class="form-group m-b-20">
+                <input  type="hidden" id="token" ng-bind="token" disabled>
+                <input class="form-control" style="width:30%;" type="hidden" id="reset-username" ng-bind="resetemail" disabled>
+
+            </div>
+            <br><br>
+            <div class="form-group m-b-20">
+                <button name="Reset" ng-click="completeRegistration()" class="btn">Complete Registration</button>
+            </div>
+        </form>
+        <br>
+    </div>
+    <div ng-show="regsuccess">
+        <br><br>
+        <h3>Registration Complete</h3>
+            To get started <a ui-sref="login">go to Login</a>
+        <br>
+    </div>
+    <div ng-show="regfail">
+        <br><br>
+        <h3>Registration Failed</h3>
+        <br>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+{
+  "name": "ski-analytics",
+  "version": "1.0.0",
+  "description": "Ski Analytics Web client",
+  "main": "dist/app.js",
+  "devDependencies": {
+    "angular-mocks": "^1.5.0",
+    "browserify": "^13.0.0",
+    "browserify-css": "^0.9.0",
+    "browserify-shim": "^3.8.12",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
+    "karma-browserify": "^5.0.2",
+    "karma-jasmine": "^0.3.7",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "watchify": "^3.7.0"
+  },
+  "browserify-css": {
+    "autoInject": true,
+    "minify": true,
+    "rootDir": "."
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "angular-auto-validate": "./node_modules/angular-auto-validate/dist/jcs-auto-validate.min.js",
+    "angular-validation-match": "./node_modules/angular-validation-match/dist/angular-validation-match.min.js"
+  },
+  "browserify-shim": {
+    "angular-auto-validate": "angular.module('jcs-autoValidate').name",
+    "angular-validation-match": "angular.module('validation.match').name"
+  },
+  "scripts": {
+    "test": "karma start",
+    "build": "browserify -t browserify-css src/main.js  -o public/main.js -d",
+    "watch": "watchify -t browserify-css src/main.js -o public/main.js -v"
+  },
+  "keywords": [
+    "ski",
+    "nordic",
+    "analytics"
+  ],
+  "author": "Aengus McCullough",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-auto-validate": "^1.19.0",
+    "angular-validation-match": "^1.7.1",
+    "bootstrap": "^3.3.6",
+    "ui-router": "^0.2.15"
+  }
+}

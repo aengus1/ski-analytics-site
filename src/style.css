@@ -1,0 +1,54 @@
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
+
+
+.main-template {
+    padding: 60px 15px;
+    text-align: left;
+}
+
+.title-template{
+    text-align: center;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #18dcd8;
+    border-color: #75dcb5;
+}
+
+.navbar-nav>li>a.profile-image {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo-text{
+    font-family: 'Fjalla One', sans-serif;
+    color: black;
+}
+
+.home-link{
+    font-family: helvetica;
+    color: black;
+    font-size: 16px
+}
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}

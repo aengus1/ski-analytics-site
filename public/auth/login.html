@@ -1,0 +1,58 @@
+<div class="main-template">
+
+        <br><br>
+        <h3>Login</h3>
+<form
+        id="login"
+        name="loginForm"
+        novalidate="novalidate"
+        ng-submit="doLogin()">
+    <div class="form-group m-b-20">
+        <label for="username" class="control-label">Username: </label>
+        <input class="form-control"
+               style="width:30%;"
+               type="email"
+               name="email"
+               id="username"
+               ng-model="loginCredentials.email"
+               placeholder="email address"
+               required="required">
+    </div>
+
+
+    <div class="form-group m-b-20">
+        <label for="password" class="control-label">Password: </label>
+        <input class="form-control"
+               style="width:30%;"
+               type="password"
+               id="password"
+               name="password"
+               ng-model="loginCredentials.password"
+               required="required"
+               ng-minlength="8"
+               ng-pattern-err-type="badPassword"
+        >
+        </br>
+    </div>
+    <div class="form-group m-b-20" ng-show="has_error">
+        <div class="alert alert-danger">
+            <strong>Login Failed!</strong> Bad username or password
+        </div>
+    </div>
+
+    <div class="form-group m-b-20">
+        <button class="btn btn-primary"
+                data-style="expand-right"
+                type="submit"
+                name="login">
+            <span ng-show="submitting">Logging In</span>
+            <span ng-show="!submitting">Login</span>
+        </button>
+        <button class="btn btn-primary"
+                data-style="expand-right"
+                type="button" ui-sref="forgot"
+                name="forgotpw">Forgot Password
+        </button>
+    </div>
+</form>
+    </div>

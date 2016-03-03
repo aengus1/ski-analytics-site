@@ -1,0 +1,46 @@
+<div class="main-template">
+    <div >
+        <br><br>
+        <h3>Forgot Password</h3>
+        <form id="forgot"
+              name="forgotForm"
+              novalidate="novalidate"
+              ng-submit="forgotPw()">
+            <div class="form-group m-b-20">
+                <label for="forgot-username" class="control-label">Email: </label>
+                <input class="form-control"
+                       style="width:30%;"
+                       type="email"
+                       name="forgot-username"
+                       id="forgot-username"
+                       ng-model="forgotemail"
+                       placeholder="email address"
+                       required="required">
+            </div>
+            <div class="form-group m-b-20">
+                <button class="btn btn-primary"
+                        data-style="expand-right"
+                        type="submit"
+                        name="forgot">
+                    <span ng-show="submitting">Submitting</span>
+                    <span ng-show="!submitting">Submit</span>
+                </button>
+            </div>
+            <div class="form-group m-b-20" ng-show="forgotConfirm">
+                    <br><br>
+                    <h3>Password Reset</h3>
+                    <p class="lead">Thank you.  You should receive an email shortly containing instructions to reset your password.</p>
+                    <button name="bckToLogin" ui-sref="login" class="btn">Back to Login</button>
+                    <br>
+            </div>
+            <div class="form-group m-b-20" ng-show="forgotDeny">
+            <br><br>
+            <h3>Oops</h3>
+            <p class="lead">No user was found with this email address.</p>
+            <button  ui-sref="register" class="btn btn-primary">Go to Register</button>
+            <br>
+                </div>
+        </form>
+        <br>
+    </div>
+</div>

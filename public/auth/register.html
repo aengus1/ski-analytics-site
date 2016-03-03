@@ -1,0 +1,115 @@
+<div class="main-template">
+    <table class="table">
+        <tr>
+            <td class="col-md-6">
+                <div >
+                    <br><br>
+                    <h3 ng-hide="registrationSuccess">Register for free</h3>
+                    <form id="registerForm"
+                          ng-init="registerRequest.sendupdates=true;"
+                          name="registerForm"
+                          novalidate="novalidate"
+                          ng-submit="register()"
+                            ng-hide="registrationSuccess">
+
+                        <div class="form-group">
+                            <label for="firstname" class="control-label">First Name: </label>
+                            <input type="text"
+                                   class="form-control"
+                                   style="width:70%;"
+                                   id="firstname"
+                                   placeholder="First Name"
+                                   ng-model="user.firstname"
+                                   ng-pattern="/^[a-zA-Z]*$/"
+                                   ng-pattern-err-type="alpha"
+                                   required="required">
+                            <br>
+                            <label for="lastname" class="control-label">Last Name: </label>
+                            <input type="text"
+                                   class="form-control"
+                                   style="width:70%;"
+                                   id="lastname"
+                                   placeholder="Last Name"
+                                   ng-model="user.lastname"
+                                   ng-pattern="/^[a-zA-Z]*$/"
+                                   ng-pattern-err-type="alpha"
+                                    required="required">
+                            <br>
+                            <label for="email" class="control-label">Email: </label>
+                            <input type="email"
+                                   class="form-control"
+                                   style="width:70%;"
+                                   id="email"
+                                   placeholder="Email"
+                                   ng-model="user.email"
+                                    required="required">
+                            <br>
+                            <label for="password" class="control-label">Password: </label>
+                            <input type="password"
+                                   class="form-control"
+                                   style="width:70%;"
+                                   id="password"
+                                   name="password"
+                                   ng-model="user.password"
+                                    required="required"
+                                   ng-pattern-err-type="badPassword"
+                                    ng-minlength="8">
+                            <br>
+                            <label for="passwordConfirm" class="control-label">Confirm Password: </label>
+                            <input type="password"
+                                   class="form-control"
+                                   style="width:70%;"
+                                   id="passwordConfirm"
+                                   name="passwordConfirm"
+                                   ng-model="register.confirmPassword"
+                                   match="user.password"
+                                   ng-pattern-err-type="passwordMatch"
+                            ><br>
+                            <input type="checkbox"
+                                   ng-model="user.sendupdates"
+                                   id="sendupdates">
+                                Send me <span class="logo-text">Ski-Analytics</span> updates<br>
+                            <br>
+                            <div class="form-group m-b-20" ng-show="duplicateEmail">
+                                <div class="alert alert-danger">
+                                    <strong>Registration Failed</strong> A user with this email address already exists.   Did you <a ui-sref="forgot">forget your password?</a>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-20" ng-show="error">
+                                <div class="alert alert-danger">
+                                    <strong>Error!</strong> Something went wrong with your registration request</a>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <button class="btn btn-primary"
+                                    data-style="expand-right"
+                                    type="submit"
+                                    name="register">
+                                <span ng-show="submitting">Registering</span>
+                                <span ng-show="!submitting">Register</span>
+                            </button>
+                            <br><br><sub>By signing up for ski-analytics you agree to our <a ui-sref="terms">terms and conditions</a > and <a ui-sref="privacy">Privacy Policy</a ></sub>
+                        </div>
+                    </form>
+                        <div ng-show="registrationSuccess">
+                            <br><br>
+                            <h3>Success</h3>
+                            <p class="lead">Registration Complete</p>
+                            You will receive an email shortly to complete your account setup.
+                            <br>
+                            <button ui-sref="login" class="btn btn-primary">Go to Login</button>
+                            <br>
+                        </div>
+                    <br>
+                </div>
+            </td>
+            <td class="col-md-6 hidden-xs hidden-sm">
+                <br><br>
+                <p class="lead">Get on it..</p>
+                <img src="img/registerImg.jpg"  alt="register"/>
+            </td>
+        </tr>
+    </table>
+</div>

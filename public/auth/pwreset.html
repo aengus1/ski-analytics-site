@@ -1,0 +1,41 @@
+<div class="main-template"  ng-init="initForm()">
+    <div >
+        <br><br>
+        <h3>Reset Password</h3>
+        <form id="resetForm"
+            novalidate="novalidate"
+              ng-submit="resetPw()">
+            <div class="form-group m-b-20">
+                <input  type="hidden" id="token" ng-bind="resettoken" disabled>
+                <input class="form-control"
+                       style="width:30%;"
+                       type="hidden"
+                       id="email"
+                       ng-bind="resetemail">
+
+                <label for="resetpw" class="control-label">New Password: </label>
+                <input class="form-control"
+                       style="width:30%;"
+                       type="password"
+                       id="resetpw"
+                       required="required"
+                       ng-minlength="8"
+                       ng-model="resetpw" >
+                <label for="resetpw" class="control-label">Confirm Password: </label>
+                <input class="form-control"
+                       style="width:30%;"
+                       type="password"
+                       id="new-password-confirm"
+                       ng-model="resetpwconfirm"
+                       match="resetpw"
+                       ng-pattern-err-type="passwordMatch"
+                >
+            </div>
+            <br><br>
+            <div class="form-group m-b-20">
+                <button type="submit" class="btn btn-primary">Reset Password</button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>
