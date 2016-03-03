@@ -50,6 +50,6 @@
     "angular-auto-validate": "^1.19.0",
     "angular-validation-match": "^1.7.1",
     "bootstrap": "^3.3.6",
-    "ui-router": "^0.2.15"
+    "ui-router": "^1.0.0alpha0"
   }
 }
