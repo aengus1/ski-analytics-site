@@ -6,7 +6,7 @@
 require('../testSetup.js');
 
 describe('AuthService', function() {
-    var $httpBackend, AuthService,API,Session,$window;np
+    var $httpBackend, AuthService,API,Session,$window;
 
     var loginCredentials = {
         'email': 'validemail@test.com',
